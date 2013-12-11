@@ -1,0 +1,10 @@
+{
+    "name": "WordGame",
+    "version": "0.0.2",
+    "description": "A word game",
+    "dependencies": {
+        "socket.io": "latest",
+        "jquery": "latest"
+    },
+    "author": "Matt King"
+}

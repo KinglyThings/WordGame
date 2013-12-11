@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Four Letter Words</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="wordgame.css" />
+        <script src="socket.io.js"></script>
+        <script src="jquery-1.10.2.min.js"></script>
+    </head>
+    <body>
+        <!-- The idea for the register modal is for it to be the "log-in" screen
+             A player chooses the username they'll be associated with there and that
+             sticks with them until they quit -->
+        <div id="login_modal" class="modal">
+            <span> Enter your desired username: </span>
+            <input id="login_username" type="text" size="15" maxlength="15"></input>
+            <button type="submit" onclick="verifyUsername();">Log In</button>
+            <div id="login_errors"></div>
+        </div>
+        <div id="game">
+            <div id="chatroom">
+                <!-- TODO: Pull these inline styles into the stylesheet -->
+                <div id="registerium" style="display:block; color:black; font-size:20px; border: 1px solid black;"></div>
+                <div id="chatbox" style="display:block; color:black; font-size:20px; border: 1px solid black;"></div>
+                
+                <div id="chat_controls" style="display:block; color:black; font-size:20px; border: 1px solid black;">
+                    <span id='chat_username'>Chat:</span>
+                    <input id="chat_field" type="text"></input>
+                    <button type="button" onclick="chat();">Send Chat</button>
+                </div>
+            </div>
+            <div id="game-container">
+                <div id="words" style="display:block; color:black; font-size:20px; border: 1px solid black;">
+                </div>
+                <div id="button-container" style="display:block; color:black; font-size:20px; border: 1px solid black">
+                    <div class="button" id="reset_button" onclick="reset();"></div>
+                    <div class="button" id="skip_button" onclick="skip();"></div>
+                    <div class="button" id="submit_button" onclick="play();"></div>
+                </div>
+            </div>
+        </div>
+
+        <script src="client.js"></script>
+    </body>
+</html>
